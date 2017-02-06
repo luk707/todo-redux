@@ -1,0 +1,5 @@
+<div *ngFor="let todo of todos; let i = index; ">
+  <span [ngClass]="{'done': todo.done}">{{todo.name}}</span>
+  <button (click)="Toggle(i)">Toggle</button>
+  <button (click)="Remove(i)">Remove</button>
+</div>

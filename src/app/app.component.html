@@ -1,3 +1,11 @@
 <h1>
-  {{title}}
+  Todo App
 </h1>
+<app-todos
+  [todos]="state.todos"
+  (toggle)="ToggleTodo($event)"
+  (remove)="RemoveTodo($event)">
+</app-todos>
+<app-todo-add
+  (new)="NewTodo($event)">
+</app-todo-add>
