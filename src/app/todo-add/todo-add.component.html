@@ -1,2 +1,9 @@
-<input [(ngModel)]="todoName" type="text">
-<button (click)="NewTodo(todoName)">Add todo</button>
+<div class="row">
+    <a (click)="NewTodo(todoName)" class="clickable icon-add">Add</a>
+    <span class="spacer"></span>
+    <input
+        [ngClass]="{'placeholder':placeholder}"
+        (click)="todoName=placeholder?'':todoName; placeholder=false;"
+        [(ngModel)]="todoName"
+        type="text">
+</div>

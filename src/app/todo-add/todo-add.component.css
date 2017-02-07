@@ -1,0 +1,30 @@
+.clickable {
+    cursor: pointer;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.icon-add {
+    align-self: center;
+}
+.spacer {
+    width: 5px;
+}
+.flex {
+    flex-grow: 1;
+}
+input {
+    min-width: 0;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: 0.1s;
+}
+input:focus {
+    outline: 0;
+    border-bottom: 2px solid #c9d7ed;
+}
+input.placeholder {
+    font-style: italic;
+    color: #c8c8c8;
+}

@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 import { Todo } from '../models';
 
 @Component({
-  selector: 'app-todos',
+  selector: '[app-todos]',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush

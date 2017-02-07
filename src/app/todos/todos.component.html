@@ -1,5 +1,5 @@
-<div *ngFor="let todo of todos; let i = index; ">
-  <span [ngClass]="{'done': todo.done}">{{todo.name}}</span>
-  <button (click)="Toggle(i)">Toggle</button>
-  <button (click)="Remove(i)">Remove</button>
-</div>
+<li *ngFor="let todo of todos; let i = index; " class="row" [ngClass]="{'done': todo.done}">
+  <a (click)="Toggle(i)" class="clickable toggle"></a>
+  <span class="flex">{{todo.name}}</span>
+  <a (click)="Remove(i)" class="clickable icon-delete">Delete</a>
+</li>

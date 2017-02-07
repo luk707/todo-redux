@@ -1,0 +1,11 @@
+.clickable {
+    cursor: pointer;
+}
+.brand {
+    font-size: 52px;
+    font-weight: bold;
+}
+.brand-container {
+    text-align: center;
+    padding-top: 80px;
+}
