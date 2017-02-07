@@ -1,11 +1,12 @@
+<a class="github-fork-ribbon" href="http://github.com/luk707/todo-redux/" title="Fork me on GitHub">Fork me on GitHub</a>
 <h1>
   Todo App
 </h1>
+<app-todo-add
+  (new)="NewTodo($event)">
+</app-todo-add>
 <app-todos
   [todos]="state.todos"
   (toggle)="ToggleTodo($event)"
   (remove)="RemoveTodo($event)">
 </app-todos>
-<app-todo-add
-  (new)="NewTodo($event)">
-</app-todo-add>
