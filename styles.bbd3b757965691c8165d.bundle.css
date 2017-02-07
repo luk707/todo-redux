@@ -1,0 +1,429 @@
+/*!
+ * "Fork me on GitHub" CSS ribbon v0.2.0 | MIT License
+ * https://github.com/simonwhitaker/github-fork-ribbon-css
+*/
+
+.github-fork-ribbon {
+  width: 12.1em;
+  height: 12.1em;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  pointer-events: none;
+  font-size: 13px;
+  text-decoration: none;
+  text-indent: -999999px;
+}
+
+.github-fork-ribbon.fixed {
+  position: fixed;
+}
+
+.github-fork-ribbon:before, .github-fork-ribbon:after {
+  /* The right and left classes determine the side we attach our banner to */
+  position: absolute;
+  display: block;
+  width: 15.38em;
+  height: 1.54em;
+  
+  top: 3.23em;
+  right: -3.23em;
+  
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.github-fork-ribbon:before {
+  content: "";
+
+  /* Add a bit of padding to give some substance outside the "stitching" */
+  padding: .38em 0;
+
+  /* Set the base colour */
+  background-color: #a00;
+
+  /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+
+  /* Add a drop shadow */
+  -webkit-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
+
+  pointer-events: auto;
+}
+
+.github-fork-ribbon:after {
+  /* Set the text from the title attribute */
+  content: attr(title);
+
+  /* Set the text properties */
+  color: #fff;
+  font: 700 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.54em;
+  text-decoration: none;
+  text-shadow: 0 -.08em rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-indent: 0;
+
+  /* Set the layout properties */
+  padding: .15em 0;
+  margin: .15em 0;
+
+  /* Add "stitching" effect */
+  border-width: .08em 0;
+  border-style: dotted;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.github-fork-ribbon.left-top, .github-fork-ribbon.left-bottom {
+  right: auto;
+  left: 0;
+}
+
+.github-fork-ribbon.left-bottom, .github-fork-ribbon.right-bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.github-fork-ribbon.left-top:before, .github-fork-ribbon.left-top:after, .github-fork-ribbon.left-bottom:before, .github-fork-ribbon.left-bottom:after {
+  right: auto;
+  left: -3.23em;
+}
+
+.github-fork-ribbon.left-bottom:before, .github-fork-ribbon.left-bottom:after, .github-fork-ribbon.right-bottom:before, .github-fork-ribbon.right-bottom:after {
+  top: auto;
+  bottom: 3.23em;
+}
+
+.github-fork-ribbon.left-top:before, .github-fork-ribbon.left-top:after, .github-fork-ribbon.right-bottom:before, .github-fork-ribbon.right-bottom:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.about {
+  margin: 70px auto 40px;
+  padding: 8px;
+  width: 260px;
+  font: 10px/18px 'Lucida Grande', Arial, sans-serif;
+  color: #bbb;
+  text-align: center;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  background: #383838;
+  background: rgba(34, 34, 34, 0.8);
+  border-radius: 4px;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 6px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.about a {
+  color: #eee;
+  text-decoration: none;
+  border-radius: 2px;
+  -webkit-transition: background 0.1s;
+  -moz-transition: background 0.1s;
+  -o-transition: background 0.1s;
+  transition: background 0.1s;
+}
+.about a:hover {
+  text-decoration: none;
+  background: #555;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.about-links {
+  height: 30px;
+}
+.about-links > a {
+  float: left;
+  width: 50%;
+  line-height: 30px;
+  font-size: 12px;
+}
+
+.about-author {
+  margin-top: 5px;
+}
+.about-author > a {
+  padding: 1px 3px;
+  margin: 0 -1px;
+}
+
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+body {
+  font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  color: #404040;
+  background: #f8f6f6;
+}
+
+.container {
+  margin: 50px auto;
+  width: 380px;
+}
+.container .todo {
+  margin: 0 auto;
+}
+
+.todo {
+  position: relative;
+  width: 260px;
+  padding: 12px 0;
+  background: white;
+  border: 1px solid;
+  border-color: #dfdcdc #d9d6d6 #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.todo:before, .todo:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  height: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+.todo:after {
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.todo:before {
+  bottom: -5px;
+  left: 2px;
+  right: 2px;
+  border-color: #c4c4c4;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.lt-ie9 .todo:before, .lt-ie9 .todo:after {
+  height: 1px;
+  border-top: 0;
+}
+
+.todo-list {
+  border-top: 1px solid #e6ebed;
+}
+.todo-list:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 35px;
+  width: 3px;
+  z-index: 2;
+  border: 1px solid #f2e3df;
+  border-width: 0 1px;
+}
+.todo-list li {
+  position: relative;
+  padding: 7px 15px 7px 50px;
+  line-height: 21px;
+  font-size: 12px;
+  color: #8b8f97;
+  border-bottom: 1px solid #e6ebed;
+}
+.todo-list .toggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
+.todo-list .toggle:before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 15px;
+  height: 15px;
+  background: #faf9f9;
+  border: 1px solid #6bb3ca;
+  border-radius: 2px;
+  -webkit-transition: box-shadow 0.2s;
+  -moz-transition: box-shadow 0.2s;
+  -o-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  -webkit-box-shadow: 0 1px 1px #dfecf4;
+  box-shadow: 0 1px 1px #dfecf4;
+}
+.todo-list .toggle:hover:before {
+  -webkit-box-shadow: 0 0 3px #6bb3ca;
+  box-shadow: 0 0 3px #6bb3ca;
+}
+.todo-list .done .toggle:before, .todo-list .toggle:active:before {
+  border-color: #c0c0c0 #ccc #d8d8d8;
+  background: #fdfcfc url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAMCAYAAADBJPs9AAAC0klEQVRIx82XT2jTUBzHexIGwkAQBgPBkzDwJAw8DTwJwk72UvDqaVAqCEIdlDWtbdMFXJsU3Z/0NabpdTAQBkKhddTmH3jyJOwkCANBEAqF+n5ve13y8qeJs2LgR1/e++Yl+fT7+72XROIfHcVqYxIUfvqXef42ey09z2RyNyCc+mQyee0AqRuo1e4iRRuRwG3ogzF2/rj6wGM4tNZ00+wahrF4VUBR+wtVUeaq0tlWWdwo8tL7KUzcLvC1FP41ICgkhNByE7VtpHQmfkHGsIbOH1c/A471y7Dsia5bJ0GQwpwQ5hw/J2UywoILSlBUGqfgMvi3ZaXzOehlaYAGtHH1gXA+muYDCoeEaX4fDKyVuICiQnLqc69eP4Q+jm+M8mUxm80KyxDQhj4YAyeBlqSJnwta7WN2DM7Zvv19ZR21tK9+c4CWPJCu63dwrIfBwe65OwtAlHG/X/Zarir2LlzywjMX7iPwsOY8XbSeG4z2s6l0nsJYc0975Hpp0DL6Uqm0KIridQyj5oGEtQTO0DC/YSBjw7BTUeHEcUQcQK55ijs3PffFfU7NeYG9dE1td3da3D2AaDFmAFH924PWmttN2iihW/YnCgMgRXXO/wdIG8utdymnlgUE7goDJAjCgtNJoE/0+/1bhmmdTqFETKu5plhF+hCUYgW+/pzUoGrjmEBA7RMXBEU7pCuQBxDWsnoKCCF1FSntL6ye3JSFpBv2WVQ48wC0Wazfx31jKMhbvPQsVxGXIKBNizS0L14s7SnQSufHnqw+8dYgrGX0siwvIUXdBgd6a5Canj4UhQRweoPBvT/ZBP41B/H17VkpDKByxZ2V0GXbUU8Cl/mAFcx3mQdIceFcdRftBwgv54+JU3CKcbx0dAlFOspxwipOwTf5cr3i3PiF7W3IGLNRjKOf+5GvSN0wODDOXgMpFdWh9NOBpA/5dHAu62o66FMjiv43hydcjzoYTXoAAAAASUVORK5CYII=) 2px 2px no-repeat;
+  -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 5px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.todo-controls {
+  margin: 0 15px 12px 50px;
+  height: 12px;
+}
+.todo-controls li {
+  float: left;
+}
+.todo-controls li + li {
+  margin-left: 10px;
+}
+.todo-controls .right {
+  float: right;
+}
+.todo-controls a {
+  display: block;
+  margin: 0;
+  opacity: .6;
+}
+.todo-controls a:hover {
+  opacity: 1;
+}
+
+.todo-pagination {
+  margin: 12px 12px 0 50px;
+  height: 22px;
+}
+.todo-pagination li {
+  float: left;
+}
+.todo-pagination .next {
+  float: right;
+}
+.todo-pagination .next i {
+  margin: 0 0 0 2px;
+}
+.todo-pagination a, .todo-pagination span {
+  display: block;
+  line-height: 22px;
+  font-size: 11px;
+  color: #676f7f;
+}
+.todo-pagination a {
+  padding: 0 8px;
+  text-decoration: none;
+  text-shadow: 0 1px white;
+  background: #f1f0f0;
+  border-radius: 3px;
+}
+.todo-pagination a:hover {
+  background: #e9e9e9;
+}
+.todo-pagination span {
+  padding: 0 4px;
+  opacity: .3;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 2px;
+  width: 12px;
+  height: 12px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAMCAYAAADBJPs9AAAC0klEQVRIx82XT2jTUBzHexIGwkAQBgPBkzDwJAw8DTwJwk72UvDqaVAqCEIdlDWtbdMFXJsU3Z/0NabpdTAQBkKhddTmH3jyJOwkCANBEAqF+n5ve13y8qeJs2LgR1/e++Yl+fT7+72XROIfHcVqYxIUfvqXef42ey09z2RyNyCc+mQyee0AqRuo1e4iRRuRwG3ogzF2/rj6wGM4tNZ00+wahrF4VUBR+wtVUeaq0tlWWdwo8tL7KUzcLvC1FP41ICgkhNByE7VtpHQmfkHGsIbOH1c/A471y7Dsia5bJ0GQwpwQ5hw/J2UywoILSlBUGqfgMvi3ZaXzOehlaYAGtHH1gXA+muYDCoeEaX4fDKyVuICiQnLqc69eP4Q+jm+M8mUxm80KyxDQhj4YAyeBlqSJnwta7WN2DM7Zvv19ZR21tK9+c4CWPJCu63dwrIfBwe65OwtAlHG/X/Zarir2LlzywjMX7iPwsOY8XbSeG4z2s6l0nsJYc0975Hpp0DL6Uqm0KIridQyj5oGEtQTO0DC/YSBjw7BTUeHEcUQcQK55ijs3PffFfU7NeYG9dE1td3da3D2AaDFmAFH924PWmttN2iihW/YnCgMgRXXO/wdIG8utdymnlgUE7goDJAjCgtNJoE/0+/1bhmmdTqFETKu5plhF+hCUYgW+/pzUoGrjmEBA7RMXBEU7pCuQBxDWsnoKCCF1FSntL6ye3JSFpBv2WVQ48wC0Wazfx31jKMhbvPQsVxGXIKBNizS0L14s7SnQSufHnqw+8dYgrGX0siwvIUXdBgd6a5Canj4UhQRweoPBvT/ZBP41B/H17VkpDKByxZ2V0GXbUU8Cl/mAFcx3mQdIceFcdRftBwgv54+JU3CKcbx0dAlFOspxwipOwTf5cr3i3PiF7W3IGLNRjKOf+5GvSN0wODDOXgMpFdWh9NOBpA/5dHAu62o66FMjiv43hydcjzoYTXoAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
+
+.icon-check {
+  background-position: 0 0;
+}
+
+.icon-add {
+  background-position: -12px 0;
+}
+
+.icon-delete {
+  background-position: -24px 0;
+}
+
+.icon-settings {
+  background-position: -36px 0;
+}
+
+.icon-previous {
+  background-position: -48px 0;
+}
+
+.icon-next {
+  background-position: -60px 0;
+}
